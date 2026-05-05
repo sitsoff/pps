@@ -1,0 +1,15 @@
+services:
+  nextjs:
+    build:
+      context: .
+      target: dev # ← changer en "runner" pour prod
+      # args:
+      #   NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app # hot-reload en dev
+      - /app/node_modules
+      - /app/.next
+    # env_file:
+    #   - .env.local
