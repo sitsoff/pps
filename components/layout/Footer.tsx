@@ -23,11 +23,13 @@ export const Footer: React.FC = () => {
               <nav className="flex flex-col gap-2">
                 {section.links.map((link) => (
                   <a
-                    key={link}
-                    href="#"
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-zinc-400 hover:text-white transition-colors text-sm"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 ))}
               </nav>

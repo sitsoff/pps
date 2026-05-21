@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Registration } from "@/components/sections/Registration";
 import { FAQ } from "@/components/sections/FAQ";
 import { landingPageData } from "@/data/landing-page";
+import { Reveal } from "@/components/ui/Reveal";
 import { FaPhone } from "react-icons/fa";
 
 export default function Home() {
@@ -36,8 +37,12 @@ export default function Home() {
 
           {/* Content */}
           <div className="relative text-white z-10 w-full mx-auto px-6 py-20 flex flex-col items-center gap-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">{cta.title}</h2>
-            <p className="text-zinc-300 text-base max-w-lg leading-relaxed">{cta.subtitle}</p>
+            <Reveal direction="up" delay={0}>
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">{cta.title}</h2>
+            </Reveal>
+            <Reveal direction="up" delay={120}>
+              <p className="text-zinc-300 text-base max-w-lg leading-relaxed">{cta.subtitle}</p>
+            </Reveal>
 
 
             <div className="hidden lg:block absolute  left-24 top-1/2">
@@ -45,9 +50,9 @@ export default function Home() {
                 {cta.phones.map((p) => (
                   <div key={p.label} className="flex items-center gap-2 text-sm text-white">
                     <FaPhone className="w-3 h-3 text-white" />
-                    <span>
+                    <a href={`tel:${p.number.replace(/-/g, "")}`} className="hover:underline">
                       {p.label}: {p.number}
-                    </span>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -65,17 +70,19 @@ export default function Home() {
               </div>
             </div>
 
-            <button className="bg-red-600 hover:bg-red-700 transition-colors text-white font-semibold px-8 py-3 text-sm rounded-sm mt-2">
-              {cta.ctaLabel}
-            </button>
+            <Reveal direction="up" delay={240}>
+              <a href="/pending" className="bg-red-600 hover:bg-red-700 transition-colors text-white font-semibold px-8 py-3 text-sm rounded-sm mt-2">
+                {cta.ctaLabel}
+              </a>
+            </Reveal>
             <div className="flex flex-col sm:flex-row space-x-10 lg:hidden">
               <div className="  flex flex-col gap-2 w-full max-w-xl self-start mt-2">
                 {cta.phones.map((p) => (
                   <div key={p.label} className="flex items-center gap-2 text-sm text-white">
                     <FaPhone className="w-3 h-3 text-white" />
-                    <span>
+                    <a href={`tel:${p.number.replace(/-/g, "")}`} className="hover:underline">
                       {p.label}: {p.number}
-                    </span>
+                    </a>
                   </div>
                 ))}
               </div>

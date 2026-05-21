@@ -4,6 +4,7 @@ import { HiPlay } from "react-icons/hi";
 import RoundedButton from "../ui/RoundedButton";
 import { Icons } from "@/utils/Icons";
 import { Section } from "../ui/Section";
+import { Reveal } from "../ui/Reveal";
 import Image from "next/image";
 
 export const OfficialTryouts: React.FC = () => {
@@ -13,24 +14,31 @@ export const OfficialTryouts: React.FC = () => {
     <Section id="tryouts" className="bg-white">
       <div className="flex flex-col lg:flex-row gap-16 items-center">
         <div className="flex-1 flex flex-col gap-8">
-
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">
-            {officialTryouts.title}
-          </h2>
-          <p className="text-zinc-500 text-lg leading-relaxed">
-            {officialTryouts.description}
-          </p>
-          <div className="flex flex-col gap-4">
-            <h4 className="font-semibold text-black uppercase tracking-widest text-xl">Matches</h4>
-            <div className="space-y-4">
-              {officialTryouts.matches}
+          <Reveal direction="right" delay={0}>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">
+              {officialTryouts.title}
+            </h2>
+          </Reveal>
+          <Reveal direction="up" delay={120}>
+            <p className="text-zinc-500 text-lg leading-relaxed">
+              {officialTryouts.description}
+            </p>
+          </Reveal>
+          <Reveal direction="up" delay={220}>
+            <div className="flex flex-col gap-4">
+              <h4 className="font-semibold text-black uppercase tracking-widest text-xl">Matches</h4>
+              <div className="space-y-4">
+                {officialTryouts.matches}
+              </div>
             </div>
-          </div>
-          <button className="text-red-500 font-bold uppercase tracking-widest text-xs flex items-center gap-2 self-start border-b-2 border-red-500 pb-1">
-            Read more
-          </button>
+          </Reveal>
+          <Reveal direction="up" delay={320}>
+            <a href="/pending" className="text-red-500 font-bold uppercase tracking-widest text-xs flex items-center gap-2 self-start border-b-2 border-red-500 pb-1">
+              Read more
+            </a>
+          </Reveal>
         </div>
-        <div className="flex-1 w-full relative group">
+        <Reveal direction="left" delay={150} className="flex-1 w-full relative group">
           <div className="w-full h-full flex items-center justify-end mb-16">
             <div className=" grid grid-cols-2  gap-6">
               <RoundedButton size="md" variant="secondary" icon={Icons.LeftArrow} />
@@ -48,7 +56,7 @@ export const OfficialTryouts: React.FC = () => {
             {/* Aspect ratio holder */}
           </div>
           <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-red-600 rounded-lg -z-10" />
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

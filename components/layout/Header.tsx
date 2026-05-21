@@ -21,6 +21,8 @@ export const Header: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className={`text-sm font-medium flex items-center gap-1 transition-colors ${item.active ? "text-red-600" : "text-zinc-800 hover:text-black"
                 }`}
             >
@@ -31,9 +33,11 @@ export const Header: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button size="md" className=" h-10 px-6  text-sm font-bold uppercase tracking-wide">
-            {header.cta.label}
-          </Button>
+          <a href={header.cta.href}>
+            <Button size="md" className=" h-10 px-6  text-sm font-bold uppercase tracking-wide">
+              {header.cta.label}
+            </Button>
+          </a>
         </div>
       </div>
     </header>

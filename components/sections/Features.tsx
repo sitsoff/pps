@@ -1,6 +1,7 @@
 import React from "react";
 import { landingPageData } from "@/data/landing-page";
 import { Section } from "../ui/Section";
+import { Reveal } from "../ui/Reveal";
 import Image from "next/image";
 
 export const Features: React.FC = () => {
@@ -8,21 +9,16 @@ export const Features: React.FC = () => {
 
   return (
     <div className="bg-[#f4f4f4] divide-y divide-zinc-200">
-      {features.map((feature, index) => (
-        <Section key={feature.id} id={String(index)} className="py-24">
+      {features.map((feature) => (
+        <Section key={feature.id} id={feature.id} className="py-24">
           <div className={`flex flex-col lg:flex-row gap-16 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''}`}>
-            <div className="flex-1 w-full">
-
+            <Reveal direction={feature.reverse ? 'left' : 'right'} delay={0} className="flex-1 w-full">
               <div className="aspect-[4/3] bg-zinc-200 rounded-sm overflow-hidden relative shadow-lg">
                 <div className="absolute inset-0 bg-black/5" />
                 <Image src={feature.image} alt="" fill />
-                {/* <div className="absolute inset-0 flex items-center justify-center text-zinc-400 font-medium italic uppercase tracking-widest text-xs">
-                    Action Shot
-                  </div> */}
               </div>
-
-            </div>
-            <div className="flex-1 flex flex-col gap-6">
+            </Reveal>
+            <Reveal direction={feature.reverse ? 'right' : 'left'} delay={150} className="flex-1 flex flex-col gap-6">
               <span className="text-red-500 font-bold uppercase tracking-widest text-xs">{feature.badge}</span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black max-w-lg leading-tight">
                 {feature.title}
@@ -44,7 +40,7 @@ export const Features: React.FC = () => {
                   ))}
                 </ul>
               )}
-            </div>
+            </Reveal>
           </div>
         </Section>
       ))}

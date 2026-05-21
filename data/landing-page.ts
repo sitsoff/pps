@@ -4,14 +4,14 @@ export const landingPageData = {
   header: {
     logo: "/assets/logo.png",
     nav: [
-      { label: "Home", href: "#", active: true },
-      { label: "Informations", href: "#", hasDropdown: true },
-      { label: "Who are we?", href: "#who-are-we" },
-      { label: "Registration", href: "#registration" },
-      { label: "Partners", href: "#partners", hasDropdown: true },
-      { label: "Ambassadors", href: "#ambassadors" },
+      { label: "Home", href: "/", active: true },
+      { label: "Informations", href: "/pending", hasDropdown: true },
+      { label: "Who are we?", href: "/#who" },
+      { label: "Registration", href: "https://app.precisionplaysoccer.com/register" },
+      { label: "Partners", href: "/pending", hasDropdown: true },
+      { label: "Ambassadors", href: "/pending" },
     ],
-    cta: { label: "Contact Us", href: "#contact" },
+    cta: { label: "Contact Us", href: "/pending" },
   },
   hero: {
     badge: "2026 TRYOUTS",
@@ -20,12 +20,12 @@ export const landingPageData = {
     title: "The Most Prestigious Soccer Tryout Camp in North America Returns",
     subtitle: "Get scouted & get a chance to go to the next level",
     ctaPrimary: { label: "Register now", href: "#registration" },
-    ctaSecondary: { label: "Try Out Sample", href: "#" },
+    ctaSecondary: { label: "Try Out Sample", href: "/pending" },
   },
   promise: {
     title: "The Promise of Elite Selection",
     description: "At Precision Play Soccer, we are committed to scouting, developing, and showcasing the most promising talent in North America. We look for players who demonstrate advanced technique, game intelligence, and a standout mindset.",
-    moreLink: { label: "Explore our Experience", href: "#" },
+    moreLink: { label: "Explore our Experience", href: "/pending" },
     gallery: [
       { title: "Face the Titans of French Football", description: "Test yourself against the highest standards by competing with elite academies in France", image: "/assets/promise1.png" },
       { title: "Recruiters from All Over the World", description: "", image: "/assets/promise2.png" },
@@ -125,9 +125,9 @@ export const landingPageData = {
       ],
       terms: {
         prefix: "By login you agree to our ",
-        termsLink: "Terms of User",
+        termsLink: { label: "Terms of User", href: "/pending" },
         separator: " and ",
-        privacyLink: "Privacy Policy",
+        privacyLink: { label: "Privacy Policy", href: "/pending" },
       },
       cta: "Register Now",
     },
@@ -174,22 +174,37 @@ export const landingPageData = {
     tagline: "Precision Play soccer is your home for fitness excellence from beginners to pros, we help you reach your full potential.",
     socials: [
       { icon: Icons.tiktok, href: "#" },
-      { icon: Icons.instagram, href: "#" },
+      { icon: Icons.instagram, href: "https://www.instagram.com/precisionplaysoccercamps/" },
       { icon: Icons.youtube, href: "#" },
       { icon: Icons.X, href: "#" },
     ],
     sections: [
       {
         title: "Quick Links",
-        links: ["Home", "About Us", "Facilities", "Programs", "Trainers"],
+        links: [
+          { label: "Home", href: "/" },
+          { label: "About Us", href: "/#who" },
+          { label: "Facilities", href: "/#tryouts" },
+          { label: "Programs", href: "/#registration" },
+          { label: "Trainers", href: "/pending" },
+        ],
       },
       {
         title: "Contact",
-        links: ["@mathieu_bodmer", "@iamjeremypastel", "@boostmysport", "@precisionplaysoccercamps"],
+        links: [
+          { label: "@mathieu_bodmer", href: "https://www.instagram.com/mathieu_bodmer/" },
+          { label: "@iamjeremypastel", href: "https://www.instagram.com/iamjeremypastel/" },
+          { label: "@boostmysport", href: "https://www.instagram.com/boostmysport/" },
+          { label: "@precisionplaysoccercamps", href: "https://www.instagram.com/precisionplaysoccercamps/" },
+        ],
       },
       {
         title: "Support",
-        links: ["Help Center", "FAQs", "Contact Us"],
+        links: [
+          { label: "Help Center", href: "/pending" },
+          { label: "FAQs", href: "/#faq" },
+          { label: "Contact Us", href: "/pending" },
+        ],
       },
     ],
     copyright: "© 2025 Precision Play Soccer. All rights reserved.",

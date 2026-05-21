@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { landingPageData } from "@/data/landing-page";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { AccordionItem } from "@/components/ui/Accordion";
 
 export const FAQ: React.FC = () => {
@@ -20,17 +21,19 @@ export const FAQ: React.FC = () => {
   return (
     <Section id="faq" spacing="md" className="bg-white">
       {/* Header */}
-      <div className="flex flex-col items-center gap-2 mb-10">
-        <span className="text-red-600 text-sm font-medium">{faq.badge}</span>
-        <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
-          {faq.title}
-        </h2>
-      </div>
+      <Reveal direction="up" delay={0}>
+        <div className="flex flex-col items-center gap-2 mb-10">
+          <span className="text-red-600 text-sm font-medium">{faq.badge}</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
+            {faq.title}
+          </h2>
+        </div>
+      </Reveal>
 
       {/* Two-column grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-5xl mx-auto">
         {/* Left column */}
-        <div className="flex flex-col gap-3">
+        <Reveal direction="right" delay={100} className="flex flex-col gap-3">
           {leftItems.map((item, i) => (
             <AccordionItem
               key={leftIndices[i]}
@@ -40,10 +43,10 @@ export const FAQ: React.FC = () => {
               onToggle={() => toggle(leftIndices[i])}
             />
           ))}
-        </div>
+        </Reveal>
 
         {/* Right column */}
-        <div className="flex flex-col gap-3">
+        <Reveal direction="left" delay={200} className="flex flex-col gap-3">
           {rightItems.map((item, i) => (
             <AccordionItem
               key={rightIndices[i]}
@@ -53,15 +56,17 @@ export const FAQ: React.FC = () => {
               onToggle={() => toggle(rightIndices[i])}
             />
           ))}
-        </div>
+        </Reveal>
       </div>
 
       {/* More Questions CTA */}
-      <div className="flex justify-center mt-10">
-        <button className="bg-red-600 hover:bg-red-700 transition-colors text-white font-semibold px-8 py-3 text-sm rounded-sm">
-          More Questions
-        </button>
-      </div>
+      <Reveal direction="up" delay={300}>
+        <div className="flex justify-center mt-10">
+          <a href="/pending" className="bg-red-600 hover:bg-red-700 transition-colors text-white font-semibold px-8 py-3 text-sm rounded-sm">
+            More Questions
+          </a>
+        </div>
+      </Reveal>
     </Section>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { landingPageData } from "@/data/landing-page";
 
 export const Registration: React.FC = () => {
@@ -9,7 +10,7 @@ export const Registration: React.FC = () => {
     <Section id="registration" className="text-white" spacing="md">
       <div className=" bg-black  p-10 flex flex-col lg:flex-row gap-0 items-stretch min-h-[360px]">
         {/* ── Left: info side ── */}
-        <div className="flex-1 flex flex-col gap-8 pr-0 lg:pr-12 py-6">
+        <Reveal direction="right" delay={0} className="flex-1 flex flex-col gap-8 pr-0 lg:pr-12 py-6">
           {/* Badge + Title */}
           <div className="flex flex-col gap-3">
             <span className="text-zinc-400 text-sm">{badge}</span>
@@ -38,10 +39,10 @@ export const Registration: React.FC = () => {
           <p className="text-zinc-500 text-xs italic leading-relaxed max-w-xs mt-auto">
             {footnote}
           </p>
-        </div>
+        </Reveal>
 
         {/* ── Right: form card ── */}
-        <div className="flex-1 flex items-stretch">
+        <Reveal direction="left" delay={150} className="flex-1 flex items-stretch">
           <div className="bg-white w-full rounded-sm shadow-xl flex flex-col gap-5 p-8 text-black justify-center">
 
             {/* Form header */}
@@ -49,7 +50,7 @@ export const Registration: React.FC = () => {
               <h3 className="text-xl font-bold text-black">{form.title}</h3>
               <p className="text-zinc-500 text-sm">
                 {form.signinText}{" "}
-                <a href="#" className="font-semibold text-black underline underline-offset-2">
+                <a href="https://app.precisionplaysoccer.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-black underline underline-offset-2">
                   {form.signinLink}
                 </a>
               </p>
@@ -70,17 +71,19 @@ export const Registration: React.FC = () => {
             {/* Terms */}
             <p className="text-zinc-500 text-xs text-center leading-relaxed">
               {form.terms.prefix}
-              <span className="font-semibold text-black">{form.terms.termsLink}</span>
+              <a href={form.terms.termsLink.href} className="font-semibold text-black underline underline-offset-2">{form.terms.termsLink.label}</a>
               {form.terms.separator}
-              <span className="font-semibold text-black">{form.terms.privacyLink}</span>
+              <a href={form.terms.privacyLink.href} className="font-semibold text-black underline underline-offset-2">{form.terms.privacyLink.label}</a>
             </p>
 
             {/* CTA */}
-            <button className="w-full bg-red-600 hover:bg-red-700 transition-colors text-white font-bold py-4 text-sm tracking-wide rounded-sm">
-              {form.cta}
-            </button>
+            <a href="https://app.precisionplaysoccer.com/register" target="_blank" rel="noopener noreferrer" className="w-full">
+              <button className="w-full bg-red-600 hover:bg-red-700 transition-colors text-white font-bold py-4 text-sm tracking-wide rounded-sm">
+                {form.cta}
+              </button>
+            </a>
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </Section>

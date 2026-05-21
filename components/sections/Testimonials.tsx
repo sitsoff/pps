@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { landingPageData } from "@/data/landing-page";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { Icons } from "@/utils/Icons";
 import Image from "next/image";
 import RoundedButton from "../ui/RoundedButton";
@@ -23,25 +24,28 @@ export const Testimonials: React.FC = () => {
       <div className="flex flex-col gap-6 md:gap-8">
 
         {/* Header row */}
-        <div className="flex justify-between items-start w-full">
-          <div className="flex flex-col gap-1 max-w-lg">
-            <span className="text-red-600 font-bold uppercase text-xs tracking-wide">
-              {testimonials.badge}
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-              {testimonials.title}
-            </h2>
-            <p className="text-zinc-500 text-sm md:text-base mt-1">{testimonials.subtitle}</p>
-          </div>
+        <Reveal direction="up" delay={0}>
+          <div className="flex justify-between items-start w-full">
+            <div className="flex flex-col gap-1 max-w-lg">
+              <span className="text-red-600 font-bold uppercase text-xs tracking-wide">
+                {testimonials.badge}
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
+                {testimonials.title}
+              </h2>
+              <p className="text-zinc-500 text-sm md:text-base mt-1">{testimonials.subtitle}</p>
+            </div>
 
-          {/* Nav arrows */}
-          <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 ml-4">
-            <RoundedButton size="md" variant="secondary" icon={Icons.LeftArrow} />
-            <RoundedButton size="md" variant="secondary" icon={Icons.RightArrow} />
+            {/* Nav arrows */}
+            <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 ml-4">
+              <RoundedButton size="md" variant="secondary" icon={Icons.LeftArrow} />
+              <RoundedButton size="md" variant="secondary" icon={Icons.RightArrow} />
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Cards row */}
+        <Reveal direction="up" delay={150}>
         <div className="flex gap-4 md:gap-6 items-stretch">
 
           {/* ── Active card ── */}
@@ -92,6 +96,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
         </div>
+        </Reveal>
 
         {/* Mobile dot indicators */}
         <div className="flex justify-center gap-2 md:hidden">
