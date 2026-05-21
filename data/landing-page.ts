@@ -5,10 +5,18 @@ export const landingPageData = {
     logo: "/assets/logo.png",
     nav: [
       { label: "Home", href: "/", active: true },
-      { label: "Informations", href: "/pending", hasDropdown: true },
+      {
+        label: "Informations",
+        href: "/pending",
+        hasDropdown: true,
+        children: [
+          { label: "Registration Process", href: "https://app.precisionplaysoccer.com/register" },
+          { label: "System and Methodology", href: "/pending" },
+        ],
+      },
       { label: "Who are we?", href: "/#who" },
       { label: "Registration", href: "https://app.precisionplaysoccer.com/register" },
-      { label: "Partners", href: "/pending", hasDropdown: true },
+      { label: "Partners", href: "/pending" },
       { label: "Ambassadors", href: "/pending" },
     ],
     cta: { label: "Contact Us", href: "/pending" },
