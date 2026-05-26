@@ -1,8 +1,8 @@
 import React from "react";
 import { landingPageData } from "@/data/landing-page";
 import { HiPlay } from "react-icons/hi";
-import RoundedButton from "../ui/RoundedButton";
-import { Icons } from "@/utils/Icons";
+// import RoundedButton from "../ui/RoundedButton";
+// import { Icons } from "@/utils/Icons";
 import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import Image from "next/image";
@@ -11,8 +11,8 @@ export const OfficialTryouts: React.FC = () => {
   const { officialTryouts } = landingPageData;
 
   return (
-    <Section id="tryouts" className="bg-white">
-      <div className="flex flex-col lg:flex-row gap-16 items-center">
+    <Section id="tryouts" className="bg-white" spacing="sm">
+      <div className="flex flex-col lg:flex-row gap-8 items-center">
         <div className="flex-1 flex flex-col gap-8">
           <Reveal direction="right" delay={0}>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">
@@ -39,12 +39,12 @@ export const OfficialTryouts: React.FC = () => {
           </Reveal>
         </div>
         <Reveal direction="left" delay={150} className="flex-1 w-full relative group">
-          <div className="w-full h-full flex items-center justify-end mb-16">
+          {/* <div className="w-full h-full flex items-center justify-end mb-16">
             <div className=" grid grid-cols-2  gap-6">
               <RoundedButton size="md" variant="secondary" icon={Icons.LeftArrow} />
               <RoundedButton size="md" variant="secondary" icon={Icons.RightArrow} />
             </div>
-          </div>
+          </div> */}
           <div className="aspect-[5/3] bg-zinc-100 rounded-sm overflow-hidden relative shadow-2xl">
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-300" />
             <div className="absolute inset-0 flex items-center justify-center z-10">

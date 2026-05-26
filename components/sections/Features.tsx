@@ -10,8 +10,8 @@ export const Features: React.FC = () => {
   return (
     <div className="bg-[#f4f4f4] divide-y divide-zinc-200">
       {features.map((feature) => (
-        <Section key={feature.id} id={feature.id} className="py-24">
-          <div className={`flex flex-col lg:flex-row gap-16 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''}`}>
+        <Section key={feature.id} id={feature.id} spacing="sm">
+          <div className={`flex flex-col lg:flex-row gap-6 items-center ${feature.reverse ? 'lg:flex-row-reverse' : ''}`}>
             <Reveal direction={feature.reverse ? 'left' : 'right'} delay={0} className="flex-1 w-full">
               <div className="aspect-[4/3] bg-zinc-200 rounded-sm overflow-hidden relative shadow-lg">
                 <div className="absolute inset-0 bg-black/5" />

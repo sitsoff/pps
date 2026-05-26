@@ -29,7 +29,7 @@ export function Section({
 
   const spacings = {
     none: '',
-    sm: 'py-8 sm:py-12',
+    sm: 'py-6 sm:py-8',
     md: 'py-12 sm:py-16',
     lg: 'py-16 sm:py-24',
     xl: 'py-24 sm:py-32'

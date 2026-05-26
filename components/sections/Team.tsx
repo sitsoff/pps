@@ -11,7 +11,8 @@ export const Team: React.FC = () => {
   return (
     <Section
       id="team"
-      className="bg-white pb-32"
+      spacing="sm"
+      className="bg-white"
     >
       <div className="flex flex-col gap-12">
         <Reveal direction="up" delay={0}>

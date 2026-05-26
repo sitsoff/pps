@@ -37,65 +37,65 @@ export const Testimonials: React.FC = () => {
             </div>
 
             {/* Nav arrows */}
-            <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 ml-4">
+            {/* <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 ml-4">
               <RoundedButton size="md" variant="secondary" icon={Icons.LeftArrow} />
               <RoundedButton size="md" variant="secondary" icon={Icons.RightArrow} />
-            </div>
+            </div> */}
           </div>
         </Reveal>
 
         {/* Cards row */}
         <Reveal direction="up" delay={150}>
-        <div className="flex gap-4 md:gap-6 items-stretch">
+          <div className="flex gap-4 md:gap-6 items-stretch">
 
-          {/* ── Active card ── */}
-          <div className="flex flex-col sm:flex-row gap-4 bg-gray-100 rounded-xl p-4 md:p-5 flex-1 min-w-0">
+            {/* ── Active card ── */}
+            <div className="flex flex-col sm:flex-row gap-4 bg-gray-100 rounded-xl p-4 md:p-5 flex-1 min-w-0">
 
-            {/* Photo — full width on mobile, fixed sidebar on sm+ */}
-            <div className="relative w-full h-52 sm:h-auto sm:w-40 md:w-48 flex-shrink-0 rounded-xl overflow-hidden bg-zinc-200">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover object-center"
-              />
+              {/* Photo — full width on mobile, fixed sidebar on sm+ */}
+              <div className="relative w-full h-52 sm:h-auto sm:w-40 md:w-48 flex-shrink-0 rounded-xl overflow-hidden bg-zinc-200">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+
+              {/* Quote + author */}
+              <div className="flex flex-col justify-between gap-3 min-w-0">
+                <div className="flex flex-col">
+                  <span className="text-black text-5xl md:text-7xl font-serif leading-none">“</span>
+                  <p className="text-base md:text-xl lg:text-3xl font-medium text-black leading-snug">
+                    {item.text}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3 pt-2 border-t border-zinc-200">
+                  <p className="font-bold text-black text-sm">{item.name}</p>
+                  <span className="text-zinc-300 text-xs">|</span>
+                  <p className="text-zinc-400 text-xs">{item.role}</p>
+                </div>
+              </div>
             </div>
 
-            {/* Quote + author */}
-            <div className="flex flex-col justify-between gap-3 min-w-0">
-              <div className="flex flex-col">
-                <span className="text-black text-5xl md:text-7xl font-serif leading-none">“</span>
-                <p className="text-base md:text-xl lg:text-3xl font-medium text-black leading-snug">
-                  {item.text}
-                </p>
-              </div>
-              <div className="flex items-center gap-2 md:gap-3 pt-2 border-t border-zinc-200">
-                <p className="font-bold text-black text-sm">{item.name}</p>
-                <span className="text-zinc-300 text-xs">|</span>
-                <p className="text-zinc-400 text-xs">{item.role}</p>
-              </div>
+            {/* ── Peeking next card — hidden on mobile, visible md+ ── */}
+            <div
+              className="hidden md:block relative flex-shrink-0 w-44 lg:w-56 rounded-xl overflow-hidden bg-zinc-400 cursor-pointer"
+
+            >
+              {nextItem.image ? (
+                <Image
+                  fill
+                  src={nextItem.image}
+                  alt={nextItem.name}
+                  className="object-cover object-center"
+                />
+              ) : (
+                <div className="w-full h-full bg-zinc-300" />
+              )}
+              <div className="absolute inset-0 bg-black/10 hover:bg-black/5 transition-colors" />
             </div>
+
           </div>
-
-          {/* ── Peeking next card — hidden on mobile, visible md+ ── */}
-          <div
-            className="hidden md:block relative flex-shrink-0 w-44 lg:w-56 rounded-xl overflow-hidden bg-zinc-400 cursor-pointer"
-
-          >
-            {nextItem.image ? (
-              <Image
-                fill
-                src={nextItem.image}
-                alt={nextItem.name}
-                className="object-cover object-center"
-              />
-            ) : (
-              <div className="w-full h-full bg-zinc-300" />
-            )}
-            <div className="absolute inset-0 bg-black/10 hover:bg-black/5 transition-colors" />
-          </div>
-
-        </div>
         </Reveal>
 
         {/* Mobile dot indicators */}

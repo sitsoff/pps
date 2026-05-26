@@ -81,7 +81,7 @@ export const landingPageData = {
     title: "Expert Team & Credibility",
     members: [
       { name: "Mathieu Bodmer", role: "Sporting Director, Le Havre AC", image: "/assets/mathieu.png" },
-      { name: "Jérémy Pastel ", role: "FIFA Agent & Co-Founder", image: "/assets/jerem.png" },
+      { name: "Jeremy Pastel ", role: "Entrepreneur & Owner of BoostMySport FIFA agency", image: "/assets/jerem.png" },
       { name: "Hanane Bodmer", role: "Management & Logistic manager", image: "/assets/angela.png" },
       { name: "Marc Delma", role: "Marketing & Communication manager", image: "/assets/mark.png" },
     ],
