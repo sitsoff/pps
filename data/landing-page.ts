@@ -60,7 +60,7 @@ export const landingPageData = {
       badge: "How it Works",
       title: "A Clear, Structured Journey From Registration to Evaluation",
       description: "",
-      image: "/assets/howitwork.png",
+      image: "/assets/howitwork.svg",
       reverse: true,
     },
     {
@@ -181,8 +181,8 @@ export const landingPageData = {
     logo: "/assets/white-logo.png", // swap with your actual logo
     tagline: "Precision Play soccer is your home for fitness excellence from beginners to pros, we help you reach your full potential.",
     socials: [
-      { icon: Icons.tiktok, href: "#" },
-      { icon: Icons.instagram, href: "https://www.instagram.com/precisionplaysoccercamps/" },
+      { icon: Icons.tiktok, href: "https://www.tiktok.com/@precisionplaysoccer?_r=1&_t=ZN-96YEq6KiHNC" },
+      { icon: Icons.instagram, href: "https://www.instagram.com/precisionplaysoccercamps?igsh=eGE2c2lzOHlhMnF6" },
       { icon: Icons.youtube, href: "#" },
       { icon: Icons.X, href: "#" },
     ],
